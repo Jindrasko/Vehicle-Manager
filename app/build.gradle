@@ -1,0 +1,187 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp'
+}
+
+android {
+    namespace 'cz.mendelu.xspacek6.vehiclemanager'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "cz.mendelu.xspacek6.vehiclemanager"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+//    kotlin {
+//        jvmToolchain {
+//            languageVersion.set(JavaLanguageVersion.of(17))
+//        }
+//    }
+//    kotlin {
+//        jvmToolchain(18)
+//    }
+//    java {
+//        toolchain {
+//            languageVersion.set(JavaLanguageVersion.of(18))
+//        }
+//    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.5.3'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    implementation 'androidx.activity:activity-compose:1.8.2'
+    implementation 'androidx.compose.material3:material3:1.2.0-beta01'
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.2")
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-service:2.6.2'
+    implementation 'io.mockk:mockk-android:1.10.5'
+    implementation 'com.linkedin.dexmaker:dexmaker:2.28.1'
+
+    testImplementation "androidx.test:core:1.5.0"
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    testImplementation "com.google.truth:truth:1.1.3"
+    testImplementation "com.squareup.okhttp3:mockwebserver:4.9.1"
+    testImplementation "io.mockk:mockk:1.10.5"
+    testImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    testImplementation 'junit:junit:4.13.2'
+
+    androidTestImplementation 'androidx.test:core-ktx:1.5.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    androidTestImplementation "androidx.arch.core:core-testing:2.2.0"
+    androidTestImplementation "com.google.truth:truth:1.1.3"
+    androidTestImplementation "io.mockk:mockk-android:1.10.5"
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:1.6.0-beta03"
+
+
+    // Koin
+    def koin_version = '3.5.0'
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "io.insert-koin:koin-androidx-compose:$koin_version"
+
+    // Navigation
+    def navigation_version = "2.7.6"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-compose:$navigation_version"
+
+    // Splash screen
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+
+    // AppIntro
+    implementation 'com.github.AppIntro:AppIntro:6.2.0'
+
+    // Room
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
+    implementation 'androidx.room:room-ktx:2.6.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    ksp 'androidx.room:room-compiler:2.6.1'
+    implementation 'androidx.room:room-runtime:2.6.1'
+
+    // DataStore
+    implementation 'androidx.datastore:datastore-core:1.0.0'
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+    // Coil
+    implementation('io.coil-kt:coil-compose:2.4.0')
+    implementation 'io.coil-kt:coil-svg:2.4.0'
+
+    // Accompanist
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.27.0"
+
+    //Accompanist permissions
+    implementation "com.google.accompanist:accompanist-permissions:0.28.0"
+
+    // Map
+    implementation 'com.google.maps.android:maps-compose:2.15.0'
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+    implementation 'androidx.compose.foundation:foundation:1.6.0-beta03'
+    implementation 'com.google.maps.android:android-maps-utils:3.5.3'
+
+    //LocationServices
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+
+    implementation 'io.github.vanpra.compose-material-dialogs:datetime:0.9.0'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+
+    // sheets-compose-dialogs
+    implementation 'com.maxkeppeler.sheets-compose-dialogs:core:1.2.0' // necessary
+    implementation 'com.maxkeppeler.sheets-compose-dialogs:calendar:1.2.0'
+    implementation 'com.maxkeppeler.sheets-compose-dialogs:duration:1.2.0'
+
+    //charts
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // Easy Permissions
+    implementation 'pub.devrel:easypermissions:3.0.0'
+
+    //gson
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Rebugger
+    implementation 'io.github.theapache64:rebugger:1.0.0-rc01'
+
+    // Google Drive
+//    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+//    implementation 'com.google.http-client:google-http-client-gson:1.26.0'
+//    implementation 'com.google.api-client:google-api-client-android:1.26.0'
+////    implementation 'com.google.apis:google-api-services-drive:v3-rev136-1.25.0'
+//    implementation('com.google.apis:google-api-services-drive:v3-rev136-1.25.0') {
+//        exclude group: 'com.google.guava', module: 'guava'
+//    }
+
+}
