@@ -54,3 +54,11 @@ VehicleManager is an Android application designed to help users manage one or mo
 
 ### Mileage Log
 - Track mileage entries over time
+
+| <img width="370" height="729" alt="02" src="https://github.com/user-attachments/assets/1a98852e-6bbe-4170-bc54-8c791cfb19a0" /> | <img width="370" height="729" alt="03" src="https://github.com/user-attachments/assets/80569917-e93d-4cb1-a388-f0661d68c24f" /> | <img width="370" height="731" alt="04" src="https://github.com/user-attachments/assets/f6280ae6-a899-4392-9b90-86e2455c5fc3" /> |
+| <img width="371" height="729" alt="05" src="https://github.com/user-attachments/assets/f56b9a4c-667c-42f9-a5f2-f58d20b4e371" /> | <img width="367" height="731" alt="06" src="https://github.com/user-attachments/assets/df567635-84e0-4721-bc56-b2bb8202f2ad" /> | <img width="367" height="729" alt="07" src="https://github.com/user-attachments/assets/b58b440b-7958-4a32-849f-d834232c31ce" /> | 
+
+
+
+
+
